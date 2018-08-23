@@ -15,8 +15,8 @@ $subtitle-strong-color: $grey-darker !default
 $subtitle-strong-weight: $weight-semibold !default
 $subtitle-negative-margin: -1.25rem !default
 
-.title,
-.subtitle
+.#{$prefix}title,
+.#{$prefix}subtitle
   +block
   word-break: break-word
   em,
@@ -26,10 +26,10 @@ $subtitle-negative-margin: -1.25rem !default
     font-size: $title-sub-size
   sup
     font-size: $title-sup-size
-  .tag
+  .#{$prefix}tag
     vertical-align: middle
 
-.title
+.#{$prefix}title
   color: $title-color
   font-size: $title-size
   font-weight: $title-weight
@@ -37,17 +37,17 @@ $subtitle-negative-margin: -1.25rem !default
   strong
     color: $title-strong-color
     font-weight: $title-strong-weight
-  & + .highlight
+  & + .#{$prefix}highlight
     margin-top: -0.75rem
-  &:not(.is-spaced) + .subtitle
+  &:not(.#{$prefix}is-spaced) + .#{$prefix}subtitle
     margin-top: $subtitle-negative-margin
   // Sizes
   @each $size in $sizes
     $i: index($sizes, $size)
-    &.is-#{$i}
+    &.#{$prefix}is-#{$i}
       font-size: $size
 
-.subtitle
+.#{$prefix}subtitle
   color: $subtitle-color
   font-size: $subtitle-size
   font-weight: $subtitle-weight
@@ -55,10 +55,10 @@ $subtitle-negative-margin: -1.25rem !default
   strong
     color: $subtitle-strong-color
     font-weight: $subtitle-strong-weight
-  &:not(.is-spaced) + .title
+  &:not(.#{$prefix}is-spaced) + .#{$prefix}title
     margin-top: $subtitle-negative-margin
   // Sizes
   @each $size in $sizes
     $i: index($sizes, $size)
-    &.is-#{$i}
+    &.#{$prefix}is-#{$i}
       font-size: $size

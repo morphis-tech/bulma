@@ -50,7 +50,7 @@ $navbar-bottom-box-shadow-size: 0 -2px 0 0 !default
   right: 0
   z-index: $navbar-fixed-z
 
-.navbar
+.#{$prefix}navbar
   background-color: $navbar-background-color
   min-height: $navbar-height
   position: relative
@@ -58,135 +58,135 @@ $navbar-bottom-box-shadow-size: 0 -2px 0 0 !default
   @each $name, $pair in $colors
     $color: nth($pair, 1)
     $color-invert: nth($pair, 2)
-    &.is-#{$name}
+    &.#{$prefix}is-#{$name}
       background-color: $color
       color: $color-invert
-      .navbar-brand
-        & > .navbar-item,
-        .navbar-link
+      .#{$prefix}navbar-brand
+        & > .#{$prefix}navbar-item,
+        .#{$prefix}navbar-link
           color: $color-invert
-        & > a.navbar-item,
-        .navbar-link
+        & > a.#{$prefix}navbar-item,
+        .#{$prefix}navbar-link
           &:hover,
-          &.is-active
+          &.#{$prefix}is-active
             background-color: darken($color, 5%)
             color: $color-invert
-        .navbar-link
+        .#{$prefix}navbar-link
           &::after
             border-color: $color-invert
       +desktop
-        .navbar-start,
-        .navbar-end
-          & > .navbar-item,
-          .navbar-link
+        .#{$prefix}navbar-start,
+        .#{$prefix}navbar-end
+          & > .#{$prefix}navbar-item,
+          .#{$prefix}navbar-link
             color: $color-invert
-          & > a.navbar-item,
-          .navbar-link
+          & > a.#{$prefix}navbar-item,
+          .#{$prefix}navbar-link
             &:hover,
-            &.is-active
+            &.#{$prefix}is-active
               background-color: darken($color, 5%)
               color: $color-invert
-          .navbar-link
+          .#{$prefix}navbar-link
             &::after
               border-color: $color-invert
-        .navbar-item.has-dropdown:hover .navbar-link,
-        .navbar-item.has-dropdown.is-active .navbar-link
+        .#{$prefix}navbar-item.#{$prefix}has-dropdown:hover .#{$prefix}navbar-link,
+        .#{$prefix}navbar-item.#{$prefix}has-dropdown.#{$prefix}is-active .#{$prefix}navbar-link
           background-color: darken($color, 5%)
           color: $color-invert
-        .navbar-dropdown
-          a.navbar-item
-            &.is-active
+        .#{$prefix}navbar-dropdown
+          a.#{$prefix}navbar-item
+            &.#{$prefix}is-active
               background-color: $color
               color: $color-invert
-  & > .container
+  & > .#{$prefix}container
     align-items: stretch
     display: flex
     min-height: $navbar-height
     width: 100%
-  &.has-shadow
+  &.#{$prefix}has-shadow
     box-shadow: $navbar-box-shadow-size $navbar-box-shadow-color
-  &.is-fixed-bottom,
-  &.is-fixed-top
+  &.#{$prefix}is-fixed-bottom,
+  &.#{$prefix}is-fixed-top
     +navbar-fixed
-  &.is-fixed-bottom
+  &.#{$prefix}is-fixed-bottom
     bottom: 0
-    &.has-shadow
+    &.#{$prefix}has-shadow
       box-shadow: $navbar-bottom-box-shadow-size $navbar-box-shadow-color
-  &.is-fixed-top
+  &.#{$prefix}is-fixed-top
     top: 0
 
 html,
 body
-  &.has-navbar-fixed-top
+  &.#{$prefix}has-navbar-fixed-top
     padding-top: $navbar-height
-  &.has-navbar-fixed-bottom
+  &.#{$prefix}has-navbar-fixed-bottom
     padding-bottom: $navbar-height
 
-.navbar-brand,
-.navbar-tabs
+.#{$prefix}navbar-brand,
+.#{$prefix}navbar-tabs
   align-items: stretch
   display: flex
   flex-shrink: 0
   min-height: $navbar-height
 
-.navbar-brand
-  a.navbar-item
+.#{$prefix}navbar-brand
+  a.#{$prefix}navbar-item
     &:hover
       background-color: transparent
 
-.navbar-tabs
+.#{$prefix}navbar-tabs
   +overflow-touch
   max-width: 100vw
   overflow-x: auto
   overflow-y: hidden
 
-.navbar-burger
+.#{$prefix}navbar-burger
   color: $navbar-burger-color
   +hamburger($navbar-height)
   margin-left: auto
 
-.navbar-menu
+.#{$prefix}navbar-menu
   display: none
 
-.navbar-item,
-.navbar-link
+.#{$prefix}navbar-item,
+.#{$prefix}navbar-link
   color: $navbar-item-color
   display: block
   line-height: 1.5
   padding: 0.5rem 0.75rem
   position: relative
-  .icon
+  .#{$prefix}icon
     &:only-child
       margin-left: -0.25rem
       margin-right: -0.25rem
 
-a.navbar-item,
-.navbar-link
+a.#{$prefix}navbar-item,
+.#{$prefix}navbar-link
   cursor: pointer
   &:hover,
-  &.is-active
+  &.#{$prefix}is-active
     background-color: $navbar-item-hover-background-color
     color: $navbar-item-hover-color
 
-.navbar-item
+.#{$prefix}navbar-item
   display: block
   flex-grow: 0
   flex-shrink: 0
   img
     max-height: $navbar-item-img-max-height
-  &.has-dropdown
+  &.#{$prefix}has-dropdown
     padding: 0
-  &.is-expanded
+  &.#{$prefix}is-expanded
     flex-grow: 1
     flex-shrink: 1
-  &.is-tab
+  &.#{$prefix}is-tab
     border-bottom: 1px solid transparent
     min-height: $navbar-height
     padding-bottom: calc(0.5rem - 1px)
     &:hover
       background-color: $navbar-tab-hover-background-color
       border-bottom-color: $navbar-tab-hover-border-bottom-color
-    &.is-active
+    &.#{$prefix}is-active
       background-color: $navbar-tab-active-background-color
       border-bottom-color: $navbar-tab-active-border-bottom-color
       border-bottom-style: $navbar-tab-active-border-bottom-style
@@ -194,26 +194,26 @@ a.navbar-item,
       color: $navbar-tab-active-color
       padding-bottom: calc(0.5rem - #{$navbar-tab-active-border-bottom-width})
 
-.navbar-content
+.#{$prefix}navbar-content
   flex-grow: 1
   flex-shrink: 1
 
-.navbar-link:not(.is-arrowless)
+.#{$prefix}navbar-link:not(.#{$prefix}is-arrowless)
   padding-right: 2.5em
   &::after
     +arrow($navbar-dropdown-arrow)
     margin-top: -0.375em
     right: 1.125em
 
-.navbar-dropdown
+.#{$prefix}navbar-dropdown
   font-size: 0.875rem
   padding-bottom: 0.5rem
   padding-top: 0.5rem
-  .navbar-item
+  .#{$prefix}navbar-item
     padding-left: 1.5rem
     padding-right: 1.5rem
 
-.navbar-divider
+.#{$prefix}navbar-divider
   background-color: $navbar-divider-background-color
   border: none
   display: none
@@ -221,121 +221,121 @@ a.navbar-item,
   margin: 0.5rem 0
 
 +touch
-  .navbar > .container
+  .#{$prefix}navbar > .#{$prefix}container
     display: block
-  .navbar-brand,
-  .navbar-tabs
-    .navbar-item
+  .#{$prefix}navbar-brand,
+  .#{$prefix}navbar-tabs
+    .#{$prefix}navbar-item
       align-items: center
       display: flex
-  .navbar-link
+  .#{$prefix}navbar-link
     &::after
       display: none
-  .navbar-menu
+  .#{$prefix}navbar-menu
     background-color: $navbar-background-color
     box-shadow: 0 8px 16px rgba($black, 0.1)
     padding: 0.5rem 0
-    &.is-active
+    &.#{$prefix}is-active
       display: block
   // Fixed navbar
-  .navbar
-    &.is-fixed-bottom-touch,
-    &.is-fixed-top-touch
+  .#{$prefix}navbar
+    &.#{$prefix}is-fixed-bottom-touch,
+    &.#{$prefix}is-fixed-top-touch
       +navbar-fixed
-    &.is-fixed-bottom-touch
+    &.#{$prefix}is-fixed-bottom-touch
       bottom: 0
-      &.has-shadow
+      &.#{$prefix}has-shadow
         box-shadow: 0 -2px 3px rgba($black, 0.1)
-    &.is-fixed-top-touch
+    &.#{$prefix}is-fixed-top-touch
       top: 0
-    &.is-fixed-top,
-    &.is-fixed-top-touch
-      .navbar-menu
+    &.#{$prefix}is-fixed-top,
+    &.#{$prefix}is-fixed-top-touch
+      .#{$prefix}navbar-menu
         +overflow-touch
         max-height: calc(100vh - #{$navbar-height})
         overflow: auto
   html,
   body
-    &.has-navbar-fixed-top-touch
+    &.#{$prefix}has-navbar-fixed-top-touch
       padding-top: $navbar-height
-    &.has-navbar-fixed-bottom-touch
+    &.#{$prefix}has-navbar-fixed-bottom-touch
       padding-bottom: $navbar-height
 
 +desktop
-  .navbar,
-  .navbar-menu,
-  .navbar-start,
-  .navbar-end
+  .#{$prefix}navbar,
+  .#{$prefix}navbar-menu,
+  .#{$prefix}navbar-start,
+  .#{$prefix}navbar-end
     align-items: stretch
     display: flex
-  .navbar
+  .#{$prefix}navbar
     min-height: $navbar-height
-    &.is-spaced
+    &.#{$prefix}is-spaced
       padding: $navbar-padding-vertical $navbar-padding-horizontal
-      .navbar-start,
-      .navbar-end
+      .#{$prefix}navbar-start,
+      .#{$prefix}navbar-end
         align-items: center
-      a.navbar-item,
-      .navbar-link
+      a.#{$prefix}navbar-item,
+      .#{$prefix}navbar-link
         border-radius: $radius
-    &.is-transparent
-      a.navbar-item,
-      .navbar-link
+    &.#{$prefix}is-transparent
+      a.#{$prefix}navbar-item,
+      .#{$prefix}navbar-link
         &:hover,
-        &.is-active
+        &.#{$prefix}is-active
           background-color: transparent !important
-      .navbar-item.has-dropdown
-        &.is-active,
-        &.is-hoverable:hover
-          .navbar-link
+      .#{$prefix}navbar-item.has-dropdown
+        &.#{$prefix}is-active,
+        &.#{$prefix}is-hoverable:hover
+          .#{$prefix}navbar-link
             background-color: transparent !important
-      .navbar-dropdown
-        a.navbar-item
+      .#{$prefix}navbar-dropdown
+        a.#{$prefix}navbar-item
           &:hover
             background-color: $navbar-dropdown-item-hover-background-color
             color: $navbar-dropdown-item-hover-color
-          &.is-active
+          &.#{$prefix}is-active
             background-color: $navbar-dropdown-item-active-background-color
             color: $navbar-dropdown-item-active-color
-  .navbar-burger
+  .#{$prefix}navbar-burger
     display: none
-  .navbar-item,
-  .navbar-link
+  .#{$prefix}navbar-item,
+  .#{$prefix}navbar-link
     align-items: center
     display: flex
-  .navbar-item
+  .#{$prefix}navbar-item
     display: flex
-    &.has-dropdown
+    &.#{$prefix}has-dropdown
       align-items: stretch
-    &.has-dropdown-up
-      .navbar-link::after
+    &.#{$prefix}has-dropdown-up
+      .#{$prefix}navbar-link::after
         transform: rotate(135deg) translate(0.25em, -0.25em)
-      .navbar-dropdown
+      .#{$prefix}navbar-dropdown
         border-bottom: $navbar-dropdown-border-top
         border-radius: $navbar-dropdown-radius $navbar-dropdown-radius 0 0
         border-top: none
         bottom: 100%
         box-shadow: 0 -8px 8px rgba($black, 0.1)
         top: auto
-    &.is-active,
-    &.is-hoverable:hover
-      .navbar-dropdown
+    &.#{$prefix}is-active,
+    &.#{$prefix}is-hoverable:hover
+      .#{$prefix}navbar-dropdown
         display: block
-        .navbar.is-spaced &,
-        &.is-boxed
+        .#{$prefix}navbar.#{$prefix}is-spaced &,
+        &.#{$prefix}is-boxed
           opacity: 1
           pointer-events: auto
           transform: translateY(0)
-  .navbar-menu
+  .#{$prefix}navbar-menu
     flex-grow: 1
     flex-shrink: 0
-  .navbar-start
+  .#{$prefix}navbar-start
     justify-content: flex-start
     margin-right: auto
-  .navbar-end
+  .#{$prefix}navbar-end
     justify-content: flex-end
     margin-left: auto
-  .navbar-dropdown
+  .#{$prefix}navbar-dropdown
     background-color: $navbar-dropdown-background-color
     border-bottom-left-radius: $navbar-dropdown-radius
     border-bottom-right-radius: $navbar-dropdown-radius
@@ -348,19 +348,19 @@ a.navbar-item,
     position: absolute
     top: 100%
     z-index: $navbar-dropdown-z
-    .navbar-item
+    .#{$prefix}navbar-item
       padding: 0.375rem 1rem
       white-space: nowrap
-    a.navbar-item
+    a.#{$prefix}navbar-item
       padding-right: 3rem
       &:hover
         background-color: $navbar-dropdown-item-hover-background-color
         color: $navbar-dropdown-item-hover-color
-      &.is-active
+      &.#{$prefix}is-active
         background-color: $navbar-dropdown-item-active-background-color
         color: $navbar-dropdown-item-active-color
-    .navbar.is-spaced &,
-    &.is-boxed
+    .#{$prefix}navbar.#{$prefix}is-spaced &,
+    &.#{$prefix}is-boxed
       border-radius: $navbar-dropdown-boxed-radius
       border-top: none
       box-shadow: $navbar-dropdown-boxed-shadow
@@ -371,47 +371,47 @@ a.navbar-item,
       transform: translateY(-5px)
       transition-duration: $speed
       transition-property: opacity, transform
-    &.is-right
+    &.#{$prefix}is-right
       left: auto
       right: 0
-  .navbar-divider
+  .#{$prefix}navbar-divider
     display: block
-  .navbar > .container,
-  .container > .navbar
-    .navbar-brand
+  .#{$prefix}navbar > .#{$prefix}container,
+  .#{$prefix}container > .#{$prefix}navbar
+    .#{$prefix}navbar-brand
       margin-left: -.75rem
-    .navbar-menu
+    .#{$prefix}navbar-menu
       margin-right: -.75rem
   // Fixed navbar
-  .navbar
-    &.is-fixed-bottom-desktop,
-    &.is-fixed-top-desktop
+  .#{$prefix}navbar
+    &.#{$prefix}is-fixed-bottom-desktop,
+    &.#{$prefix}is-fixed-top-desktop
       +navbar-fixed
-    &.is-fixed-bottom-desktop
+    &.#{$prefix}is-fixed-bottom-desktop
       bottom: 0
-      &.has-shadow
+      &.#{$prefix}has-shadow
         box-shadow: 0 -2px 3px rgba($black, 0.1)
-    &.is-fixed-top-desktop
+    &.#{$prefix}is-fixed-top-desktop
       top: 0
   html,
   body
-    &.has-navbar-fixed-top-desktop
+    &.#{$prefix}has-navbar-fixed-top-desktop
       padding-top: $navbar-height
-    &.has-navbar-fixed-bottom-desktop
+    &.#{$prefix}has-navbar-fixed-bottom-desktop
       padding-bottom: $navbar-height
-    &.has-spaced-navbar-fixed-top
+    &.#{$prefix}has-spaced-navbar-fixed-top
       padding-top: $navbar-height + ($navbar-padding-vertical * 2)
-    &.has-spaced-navbar-fixed-bottom
+    &.#{$prefix}has-spaced-navbar-fixed-bottom
       padding-bottom: $navbar-height + ($navbar-padding-vertical * 2)
   // Hover/Active states
-  a.navbar-item,
-  .navbar-link
-    &.is-active
+  a.#{$prefix}navbar-item,
+  .#{$prefix}navbar-link
+    &.#{$prefix}is-active
       color: $navbar-item-active-color
-    &.is-active:not(:hover)
+    &.#{$prefix}is-active:not(:hover)
       background-color: $navbar-item-active-background-color
-  .navbar-item.has-dropdown
+  .#{$prefix}navbar-item.#{$prefix}has-dropdown
     &:hover,
-    &.is-active
-      .navbar-link
+    &.#{$prefix}is-active
+      .#{$prefix}navbar-link
         background-color: $navbar-item-hover-background-color

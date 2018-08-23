@@ -1,22 +1,22 @@
 // Float
 
-.is-clearfix
+.#{$prefix}is-clearfix
   +clearfix
 
-.is-pulled-left
+.#{$prefix}is-pulled-left
   float: left !important
 
-.is-pulled-right
+.#{$prefix}is-pulled-right
   float: right !important
 
 // Overflow
 
-.is-clipped
+.#{$prefix}is-clipped
   overflow: hidden !important
 
 // Overlay
 
-.is-overlay
+.#{$prefix}is-overlay
   +overlay
 
 // Typography
@@ -24,7 +24,7 @@
 =typography-size($target:'')
   @each $size in $sizes
     $i: index($sizes, $size)
-    .is-size-#{$i}#{if($target == '', '', '-' + $target)}
+    .#{$prefix}is-size-#{$i}#{if($target == '', '', '-' + $target)}
       font-size: $size !important
 
 +typography-size()
@@ -50,74 +50,74 @@
 $alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'right': 'right')
 
 @each $alignment, $text-align in $alignments
-  .has-text-#{$alignment}
+  .#{$prefix}has-text-#{$alignment}
     text-align: #{$text-align} !important
 
 @each $alignment, $text-align in $alignments
   +mobile
-    .has-text-#{$alignment}-mobile
+    .#{$prefix}has-text-#{$alignment}-mobile
       text-align: #{$text-align} !important
   +tablet
-    .has-text-#{$alignment}-tablet
+    .#{$prefix}has-text-#{$alignment}-tablet
       text-align: #{$text-align} !important
   +tablet-only
-    .has-text-#{$alignment}-tablet-only
+    .#{$prefix}has-text-#{$alignment}-tablet-only
       text-align: #{$text-align} !important
   +touch
-    .has-text-#{$alignment}-touch
+    .#{$prefix}has-text-#{$alignment}-touch
       text-align: #{$text-align} !important
   +desktop
-    .has-text-#{$alignment}-desktop
+    .#{$prefix}has-text-#{$alignment}-desktop
       text-align: #{$text-align} !important
   +desktop-only
-    .has-text-#{$alignment}-desktop-only
+    .#{$prefix}has-text-#{$alignment}-desktop-only
       text-align: #{$text-align} !important
   +widescreen
-    .has-text-#{$alignment}-widescreen
+    .#{$prefix}has-text-#{$alignment}-widescreen
       text-align: #{$text-align} !important
   +widescreen-only
-    .has-text-#{$alignment}-widescreen-only
+    .#{$prefix}has-text-#{$alignment}-widescreen-only
       text-align: #{$text-align} !important
   +fullhd
-    .has-text-#{$alignment}-fullhd
+    .#{$prefix}has-text-#{$alignment}-fullhd
       text-align: #{$text-align} !important
 
-.is-capitalized
+#{$prefix}.is-capitalized
   text-transform: capitalize !important
 
-.is-lowercase
+#{$prefix}.is-lowercase
   text-transform: lowercase !important
 
-.is-uppercase
+#{$prefix}.is-uppercase
   text-transform: uppercase !important
 
-.is-italic
+#{$prefix}.is-italic
   font-style: italic !important
 
 @each $name, $pair in $colors
   $color: nth($pair, 1)
-  .has-text-#{$name}
+  .#{$prefix}has-text-#{$name}
     color: $color !important
-  a.has-text-#{$name}
+  a.#{$prefix}has-text-#{$name}
     &:hover,
     &:focus
       color: darken($color, 10%) !important
-  .has-background-#{$name}
+  .#{$prefix}has-background-#{$name}
     background-color: $color !important
 
 @each $name, $shade in $shades
-  .has-text-#{$name}
+  .#{$prefix}has-text-#{$name}
     color: $shade !important
-  .has-background-#{$name}
+  .#{$prefix}has-background-#{$name}
     background-color: $shade !important
 
-.has-text-weight-light
+.#{$prefix}has-text-weight-light
   font-weight: $weight-light !important
-.has-text-weight-normal
+.#{$prefix}has-text-weight-normal
   font-weight: $weight-normal !important
-.has-text-weight-semibold
+.#{$prefix}has-text-weight-semibold
   font-weight: $weight-semibold !important
-.has-text-weight-bold
+.#{$prefix}has-text-weight-bold
   font-weight: $weight-bold !important
 
 // Visibility
@@ -125,40 +125,40 @@ $alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'rig
 $displays: 'block' 'flex' 'inline' 'inline-block' 'inline-flex'
 
 @each $display in $displays
-  .is-#{$display}
+  .#{$prefix}is-#{$display}
     display: #{$display} !important
   +mobile
-    .is-#{$display}-mobile
+    .#{$prefix}is-#{$display}-mobile
       display: #{$display} !important
   +tablet
-    .is-#{$display}-tablet
+    .#{$prefix}is-#{$display}-tablet
       display: #{$display} !important
   +tablet-only
-    .is-#{$display}-tablet-only
+    .#{$prefix}is-#{$display}-tablet-only
       display: #{$display} !important
   +touch
-    .is-#{$display}-touch
+    .#{$prefix}is-#{$display}-touch
       display: #{$display} !important
   +desktop
-    .is-#{$display}-desktop
+    .#{$prefix}is-#{$display}-desktop
       display: #{$display} !important
   +desktop-only
-    .is-#{$display}-desktop-only
+    .#{$prefix}is-#{$display}-desktop-only
       display: #{$display} !important
   +widescreen
-    .is-#{$display}-widescreen
+    .#{$prefix}is-#{$display}-widescreen
       display: #{$display} !important
   +widescreen-only
-    .is-#{$display}-widescreen-only
+    .#{$prefix}is-#{$display}-widescreen-only
       display: #{$display} !important
   +fullhd
-    .is-#{$display}-fullhd
+    .#{$prefix}is-#{$display}-fullhd
       display: #{$display} !important
 
-.is-hidden
+.#{$prefix}is-hidden
   display: none !important
 
-.is-sr-only
+.#{$prefix}is-sr-only
   border: none !important
   clip-path: inset(50%) !important
   clip: rect(0, 0, 0, 0) !important
@@ -170,93 +170,93 @@ $displays: 'block' 'flex' 'inline' 'inline-block' 'inline-flex'
   width: 0.01em !important
 
 +mobile
-  .is-hidden-mobile
+  .#{$prefix}is-hidden-mobile
     display: none !important
 
 +tablet
-  .is-hidden-tablet
+  .#{$prefix}is-hidden-tablet
     display: none !important
 
 +tablet-only
-  .is-hidden-tablet-only
+  .#{$prefix}is-hidden-tablet-only
     display: none !important
 
 +touch
-  .is-hidden-touch
+  .#{$prefix}is-hidden-touch
     display: none !important
 
 +desktop
-  .is-hidden-desktop
+  .#{$prefix}is-hidden-desktop
     display: none !important
 
 +desktop-only
-  .is-hidden-desktop-only
+  .#{$prefix}is-hidden-desktop-only
     display: none !important
 
 +widescreen
-  .is-hidden-widescreen
+  .#{$prefix}is-hidden-widescreen
     display: none !important
 
 +widescreen-only
-  .is-hidden-widescreen-only
+  .#{$prefix}is-hidden-widescreen-only
     display: none !important
 
 +fullhd
-  .is-hidden-fullhd
+  .#{$prefix}is-hidden-fullhd
     display: none !important
 
-.is-invisible
+.#{$prefix}is-invisible
   visibility: hidden !important
 
 +mobile
-  .is-invisible-mobile
+  .#{$prefix}is-invisible-mobile
     visibility: hidden !important
 
 +tablet
-  .is-invisible-tablet
+  .#{$prefix}is-invisible-tablet
     visibility: hidden !important
 
 +tablet-only
-  .is-invisible-tablet-only
+  .#{$prefix}is-invisible-tablet-only
     visibility: hidden !important
 
 +touch
-  .is-invisible-touch
+  .#{$prefix}is-invisible-touch
     visibility: hidden !important
 
 +desktop
-  .is-invisible-desktop
+  .#{$prefix}is-invisible-desktop
     visibility: hidden !important
 
 +desktop-only
-  .is-invisible-desktop-only
+  .#{$prefix}is-invisible-desktop-only
     visibility: hidden !important
 
 +widescreen
-  .is-invisible-widescreen
+  .#{$prefix}is-invisible-widescreen
     visibility: hidden !important
 
 +widescreen-only
-  .is-invisible-widescreen-only
+  .#{$prefix}is-invisible-widescreen-only
     visibility: hidden !important
 
 +fullhd
-  .is-invisible-fullhd
+  .#{$prefix}is-invisible-fullhd
     visibility: hidden !important
 
 // Other
 
-.is-marginless
+.#{$prefix}is-marginless
   margin: 0 !important
 
-.is-paddingless
+.#{$prefix}is-paddingless
   padding: 0 !important
 
-.is-radiusless
+.#{$prefix}is-radiusless
   border-radius: 0 !important
 
-.is-shadowless
+.#{$prefix}is-shadowless
   box-shadow: none !important
 
-.is-unselectable
+.#{$prefix}is-unselectable
   +unselectable

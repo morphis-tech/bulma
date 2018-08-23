@@ -40,7 +40,7 @@ $button-static-border-color: $grey-lighter !default
 =button-large
   font-size: $size-large
 
-.button
+.#{$prefix}button
   +control
   +unselectable
   background-color: $button-background-color
@@ -57,11 +57,11 @@ $button-static-border-color: $grey-lighter !default
   white-space: nowrap
   strong
     color: inherit
-  .icon
+  .#{$prefix}icon
     &,
-    &.is-small,
-    &.is-medium,
-    &.is-large
+    &.#{$prefix}is-small,
+    &.#{$prefix}is-medium,
+    &.#{$prefix}is-large
       height: 1.5em
       width: 1.5em
     &:first-child:not(:last-child)
@@ -75,33 +75,33 @@ $button-static-border-color: $grey-lighter !default
       margin-right: calc(-0.375em - #{$button-border-width})
   // States
   &:hover,
-  &.is-hovered
+  &.#{$prefix}is-hovered
     border-color: $button-hover-border-color
     color: $button-hover-color
   &:focus,
-  &.is-focused
+  &.#{$prefix}is-focused
     border-color: $button-focus-border-color
     color: $button-focus-color
     &:not(:active)
       box-shadow: $button-focus-box-shadow-size $button-focus-box-shadow-color
   &:active,
-  &.is-active
+  &.#{$prefix}is-active
     border-color: $button-active-border-color
     color: $button-active-color
   // Colors
-  &.is-text
+  &.#{$prefix}is-text
     background-color: transparent
     border-color: transparent
     color: $button-text-color
     text-decoration: underline
     &:hover,
-    &.is-hovered,
+    &.#{$prefix}is-hovered,
     &:focus,
-    &.is-focused
+    &.#{$prefix}is-focused
       background-color: $button-text-hover-background-color
       color: $button-text-hover-color
     &:active,
-    &.is-active
+    &.#{$prefix}is-active
       background-color: darken($button-text-hover-background-color, 5%)
       color: $button-text-hover-color
     &[disabled]
@@ -111,23 +111,23 @@ $button-static-border-color: $grey-lighter !default
   @each $name, $pair in $colors
     $color: nth($pair, 1)
     $color-invert: nth($pair, 2)
-    &.is-#{$name}
+    &.#{$prefix}is-#{$name}
       background-color: $color
       border-color: transparent
       color: $color-invert
       &:hover,
-      &.is-hovered
+      &.#{$prefix}is-hovered
         background-color: darken($color, 2.5%)
         border-color: transparent
         color: $color-invert
       &:focus,
-      &.is-focused
+      &.#{$prefix}is-focused
         border-color: transparent
         color: $color-invert
         &:not(:active)
           box-shadow: $button-focus-box-shadow-size rgba($color, 0.25)
       &:active,
-      &.is-active
+      &.#{$prefix}is-active
         background-color: darken($color, 5%)
         border-color: transparent
         color: $color-invert
@@ -135,7 +135,7 @@ $button-static-border-color: $grey-lighter !default
         background-color: $color
         border-color: transparent
         box-shadow: none
-      &.is-inverted
+      &.#{$prefix}is-inverted
         background-color: $color-invert
         color: $color
         &:hover
@@ -145,10 +145,10 @@ $button-static-border-color: $grey-lighter !default
           border-color: transparent
           box-shadow: none
           color: $color
-      &.is-loading
+      &.#{$prefix}is-loading
         &::after
           border-color: transparent transparent $color-invert $color-invert !important
-      &.is-outlined
+      &.#{$prefix}is-outlined
         background-color: transparent
         border-color: $color
         color: $color
@@ -157,7 +157,7 @@ $button-static-border-color: $grey-lighter !default
           background-color: $color
           border-color: $color
           color: $color-invert
-        &.is-loading
+        &.#{$prefix}is-loading
           &::after
             border-color: transparent transparent $color $color !important
         &[disabled]
@@ -165,7 +165,7 @@ $button-static-border-color: $grey-lighter !default
           border-color: $color
           box-shadow: none
           color: $color
-      &.is-inverted.is-outlined
+      &.#{$prefix}is-inverted.#{$prefix}is-outlined
         background-color: transparent
         border-color: $color-invert
         color: $color-invert
@@ -179,11 +179,11 @@ $button-static-border-color: $grey-lighter !default
           box-shadow: none
           color: $color-invert
   // Sizes
-  &.is-small
+  &.#{$prefix}is-small
     +button-small
-  &.is-medium
+  &.#{$prefix}is-medium
     +button-medium
-  &.is-large
+  &.#{$prefix}is-large
     +button-large
   // Modifiers
   &[disabled]
@@ -191,33 +191,33 @@ $button-static-border-color: $grey-lighter !default
     border-color: $button-disabled-border-color
     box-shadow: $button-disabled-shadow
     opacity: $button-disabled-opacity
-  &.is-fullwidth
+  &.#{$prefix}is-fullwidth
     display: flex
     width: 100%
-  &.is-loading
+  &.#{$prefix}is-loading
     color: transparent !important
     pointer-events: none
     &::after
       +loader
       +center(1em)
       position: absolute !important
-  &.is-static
+  &.#{$prefix}is-static
     background-color: $button-static-background-color
     border-color: $button-static-border-color
     color: $button-static-color
     box-shadow: none
     pointer-events: none
-  &.is-rounded
+  &.#{$prefix}is-rounded
     border-radius: $radius-rounded
     padding-left: 1em
     padding-right: 1em
 
-.buttons
+.#{$prefix}buttons
   align-items: center
   display: flex
   flex-wrap: wrap
   justify-content: flex-start
-  .button
+  .#{$prefix}button
     margin-bottom: 0.5rem
     &:not(:last-child)
       margin-right: 0.5rem
@@ -225,8 +225,8 @@ $button-static-border-color: $grey-lighter !default
     margin-bottom: -0.5rem
   &:not(:last-child)
     margin-bottom: 1rem
-  &.has-addons
-    .button
+  &.#{$prefix}has-addons
+    .#{$prefix}button
       &:not(:first-child)
         border-bottom-left-radius: 0
         border-top-left-radius: 0
@@ -237,19 +237,19 @@ $button-static-border-color: $grey-lighter !default
       &:last-child
         margin-right: 0
       &:hover,
-      &.is-hovered
+      &.#{$prefix}is-hovered
         z-index: 2
       &:focus,
-      &.is-focused,
+      &.#{$prefix}is-focused,
       &:active,
-      &.is-active,
-      &.is-selected
+      &.#{$prefix}is-active,
+      &.#{$prefix}is-selected
         z-index: 3
         &:hover
           z-index: 4
-      &.is-expanded
+      &.#{$prefix}is-expanded
         flex-grow: 1
-  &.is-centered
+  &.#{$prefix}is-centered
     justify-content: center
-  &.is-right
+  &.#{$prefix}is-right
     justify-content: flex-end

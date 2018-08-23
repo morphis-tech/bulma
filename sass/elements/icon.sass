@@ -3,19 +3,19 @@ $icon-dimensions-small: 1rem !default
 $icon-dimensions-medium: 2rem !default
 $icon-dimensions-large: 3rem !default
 
-.icon
+.#{$prefix}icon
   align-items: center
   display: inline-flex
   justify-content: center
   height: $icon-dimensions
   width: $icon-dimensions
   // Sizes
-  &.is-small
+  &.#{$prefix}is-small
     height: $icon-dimensions-small
     width: $icon-dimensions-small
-  &.is-medium
+  &.#{$prefix}is-medium
     height: $icon-dimensions-medium
     width: $icon-dimensions-medium
-  &.is-large
+  &.#{$prefix}is-large
     height: $icon-dimensions-large
     width: $icon-dimensions-large

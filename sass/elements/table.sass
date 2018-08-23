@@ -19,7 +19,7 @@ $table-row-active-color: $primary-invert !default
 $table-striped-row-even-background-color: $white-bis !default
 $table-striped-row-even-hover-background-color: $white-ter !default
 
-.table
+.#{$prefix}table
   +block
   background-color: $table-background-color
   color: $table-color
@@ -33,15 +33,15 @@ $table-striped-row-even-hover-background-color: $white-ter !default
     @each $name, $pair in $colors
       $color: nth($pair, 1)
       $color-invert: nth($pair, 2)
-      &.is-#{$name}
+      &.#{$prefix}is-#{$name}
         background-color: $color
         border-color: $color
         color: $color-invert
     // Modifiers
-    &.is-narrow
+    &.#{$prefix}is-narrow
       white-space: nowrap
       width: 1%
-    &.is-selected
+    &.#{$prefix}is-selected
       background-color: $table-row-active-background-color
       color: $table-row-active-color
       a,
@@ -51,7 +51,7 @@ $table-striped-row-even-hover-background-color: $white-ter !default
     color: $table-cell-heading-color
     text-align: left
   tr
-    &.is-selected
+    &.#{$prefix}is-selected
       background-color: $table-row-active-background-color
       color: $table-row-active-color
       a,
@@ -78,7 +78,7 @@ $table-striped-row-even-hover-background-color: $white-ter !default
         th
           border-bottom-width: 0
   // Modifiers
-  &.is-bordered
+  &.#{$prefix}is-bordered
     td,
     th
       border-width: 1px
@@ -87,29 +87,29 @@ $table-striped-row-even-hover-background-color: $white-ter !default
         td,
         th
           border-bottom-width: 1px
-  &.is-fullwidth
+  &.#{$prefix}is-fullwidth
     width: 100%
-  &.is-hoverable
+  &.#{$prefix}is-hoverable
     tbody
-      tr:not(.is-selected)
+      tr:not(.#{$prefix}is-selected)
         &:hover
           background-color: $table-row-hover-background-color
-    &.is-striped
+    &.#{$prefix}is-striped
       tbody
-        tr:not(.is-selected)
+        tr:not(.#{$prefix}is-selected)
           &:hover
             background-color: $table-striped-row-even-hover-background-color
-  &.is-narrow
+  &.#{$prefix}is-narrow
     td,
     th
       padding: 0.25em 0.5em
-  &.is-striped
+  &.#{$prefix}is-striped
     tbody
-      tr:not(.is-selected)
+      tr:not(.#{$prefix}is-selected)
         &:nth-child(even)
           background-color: $table-striped-row-even-background-color
 
-.table-container
+.#{$prefix}table-container
   +block
   +overflow-touch
   overflow: auto

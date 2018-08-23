@@ -9,17 +9,17 @@ $menu-list-border-left: 1px solid $border !default
 
 $menu-label-color: $text-light !default
 
-.menu
+.#{$prefix}menu
   font-size: $size-normal
   // Sizes
-  &.is-small
+  &.#{$prefix}is-small
     font-size: $size-small
-  &.is-medium
+  &.#{$prefix}is-medium
     font-size: $size-medium
-  &.is-large
+  &.#{$prefix}is-large
     font-size: $size-large
 
-.menu-list
+.#{$prefix}menu-list
   line-height: 1.25
   a
     border-radius: $menu-item-radius
@@ -30,7 +30,7 @@ $menu-label-color: $text-light !default
       background-color: $menu-item-hover-background-color
       color: $menu-item-hover-color
     // Modifiers
-    &.is-active
+    &.#{$prefix}is-active
       background-color: $menu-item-active-background-color
       color: $menu-item-active-color
   li
@@ -39,7 +39,7 @@ $menu-label-color: $text-light !default
       margin: 0.75em
       padding-left: 0.75em
 
-.menu-label
+.#{$prefix}menu-label
   color: $menu-label-color
   font-size: 0.75em
   letter-spacing: 0.1em

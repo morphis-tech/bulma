@@ -26,7 +26,7 @@ $tabs-toggle-link-active-background-color: $link !default
 $tabs-toggle-link-active-border-color: $link !default
 $tabs-toggle-link-active-color: $link-invert !default
 
-.tabs
+.#{$prefix}tabs
   +block
   +overflow-touch
   +unselectable
@@ -53,7 +53,7 @@ $tabs-toggle-link-active-color: $link-invert !default
       color: $tabs-link-hover-color
   li
     display: block
-    &.is-active
+    &.#{$prefix}is-active
       a
         border-bottom-color: $tabs-link-active-border-bottom-color
         color: $tabs-link-active-color
@@ -66,30 +66,30 @@ $tabs-toggle-link-active-color: $link-invert !default
     flex-grow: 1
     flex-shrink: 0
     justify-content: flex-start
-    &.is-left
+    &.#{$prefix}is-left
       padding-right: 0.75em
-    &.is-center
+    &.#{$prefix}is-center
       flex: none
       justify-content: center
       padding-left: 0.75em
       padding-right: 0.75em
-    &.is-right
+    &.#{$prefix}is-right
       justify-content: flex-end
       padding-left: 0.75em
-  .icon
+  .#{$prefix}icon
     &:first-child
       margin-right: 0.5em
     &:last-child
       margin-left: 0.5em
   // Alignment
-  &.is-centered
+  &.#{$prefix}is-centered
     ul
       justify-content: center
-  &.is-right
+  &.#{$prefix}is-right
     ul
       justify-content: flex-end
   // Styles
-  &.is-boxed
+  &.#{$prefix}is-boxed
     a
       border: 1px solid transparent
       border-radius: $tabs-boxed-link-radius $tabs-boxed-link-radius 0 0
@@ -97,16 +97,16 @@ $tabs-toggle-link-active-color: $link-invert !default
         background-color: $tabs-boxed-link-hover-background-color
         border-bottom-color: $tabs-boxed-link-hover-border-bottom-color
     li
-      &.is-active
+      &.#{$prefix}is-active
         a
           background-color: $tabs-boxed-link-active-background-color
           border-color: $tabs-boxed-link-active-border-color
           border-bottom-color: $tabs-boxed-link-active-border-bottom-color !important
-  &.is-fullwidth
+  &.#{$prefix}is-fullwidth
     li
       flex-grow: 1
       flex-shrink: 0
-  &.is-toggle
+  &.#{$prefix}is-toggle
     a
       border-color: $tabs-toggle-link-border-color
       border-style: $tabs-toggle-link-border-style
@@ -124,7 +124,7 @@ $tabs-toggle-link-active-color: $link-invert !default
         border-radius: $tabs-toggle-link-radius 0 0 $tabs-toggle-link-radius
       &:last-child a
         border-radius: 0 $tabs-toggle-link-radius $tabs-toggle-link-radius 0
-      &.is-active
+      &.#{$prefix}is-active
         a
           background-color: $tabs-toggle-link-active-background-color
           border-color: $tabs-toggle-link-active-border-color
@@ -132,7 +132,7 @@ $tabs-toggle-link-active-color: $link-invert !default
           z-index: 1
     ul
       border-bottom: none
-    &.is-toggle-rounded
+    &.#{$prefix}is-toggle-rounded
       li
         &:first-child a
           border-bottom-left-radius: $radius-rounded
@@ -143,9 +143,9 @@ $tabs-toggle-link-active-color: $link-invert !default
           border-top-right-radius: $radius-rounded
           padding-right: 1.25em
   // Sizes
-  &.is-small
+  &.#{$prefix}is-small
     font-size: $size-small
-  &.is-medium
+  &.#{$prefix}is-medium
     font-size: $size-medium
-  &.is-large
+  &.#{$prefix}is-large
     font-size: $size-large

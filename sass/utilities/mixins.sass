@@ -50,7 +50,7 @@
   &:hover
     background-color: rgba(black, 0.05)
   // Modifers
-  &.is-active
+  &#{$prefix}is-active
     span
       &:nth-child(1)
         transform: translateY(5px) rotate(45deg)
@@ -210,21 +210,21 @@
   &:active
     background-color: rgba($black, 0.4)
   // Sizes
-  &.is-small
+  &#{$prefix}is-small
     height: 16px
     max-height: 16px
     max-width: 16px
     min-height: 16px
     min-width: 16px
     width: 16px
-  &.is-medium
+  &#{$prefix}is-medium
     height: 24px
     max-height: 24px
     max-width: 24px
     min-height: 24px
     min-width: 24px
     width: 24px
-  &.is-large
+  &#{$prefix}is-large
     height: 32px
     max-height: 32px
     max-width: 32px

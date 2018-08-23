@@ -28,7 +28,7 @@ $modal-card-foot-border-top: 1px solid $border !default
 $modal-card-body-background-color: $white !default
 $modal-card-body-padding: 20px !default
 
-.modal
+.#{$prefix}modal
   +overlay
   align-items: center
   display: none
@@ -38,15 +38,15 @@ $modal-card-body-padding: 20px !default
   position: fixed
   z-index: $modal-z
   // Modifiers
-  &.is-active
+  &.#{$prefix}is-active
     display: flex
 
-.modal-background
+.#{$prefix}modal-background
   +overlay
   background-color: $modal-background-background-color
 
-.modal-content,
-.modal-card
+.#{$prefix}modal-content,
+.#{$prefix}modal-card
   margin: 0 $modal-content-margin-mobile
   max-height: calc(100vh - #{$modal-content-spacing-mobile})
   overflow: auto
@@ -58,7 +58,7 @@ $modal-card-body-padding: 20px !default
     max-height: calc(100vh - #{$modal-content-spacing-tablet})
     width: $modal-content-width
 
-.modal-close
+.#{$prefix}modal-close
   +delete
   background: none
   height: $modal-close-dimensions
@@ -67,15 +67,15 @@ $modal-card-body-padding: 20px !default
   top: $modal-close-top
   width: $modal-close-dimensions
 
-.modal-card
+.#{$prefix}modal-card
   display: flex
   flex-direction: column
   max-height: calc(100vh - #{$modal-card-spacing})
   overflow: hidden
   -ms-overflow-y: visible
 
-.modal-card-head,
-.modal-card-foot
+.#{$prefix}modal-card-head,
+.#{$prefix}modal-card-foot
   align-items: center
   background-color: $modal-card-head-background-color
   display: flex
@@ -84,27 +84,27 @@ $modal-card-body-padding: 20px !default
   padding: $modal-card-head-padding
   position: relative
 
-.modal-card-head
+.#{$prefix}modal-card-head
   border-bottom: $modal-card-head-border-bottom
   border-top-left-radius: $modal-card-head-radius
   border-top-right-radius: $modal-card-head-radius
 
-.modal-card-title
+.#{$prefix}modal-card-title
   color: $modal-card-title-color
   flex-grow: 1
   flex-shrink: 0
   font-size: $modal-card-title-size
   line-height: $modal-card-title-line-height
 
-.modal-card-foot
+.#{$prefix}modal-card-foot
   border-bottom-left-radius: $modal-card-foot-radius
   border-bottom-right-radius: $modal-card-foot-radius
   border-top: $modal-card-foot-border-top
-  .button
+  .#{$prefix}button
     &:not(:last-child)
       margin-right: 10px
 
-.modal-card-body
+.#{$prefix}modal-card-body
   +overflow-touch
   background-color: $modal-card-body-background-color
   flex-grow: 1
