@@ -24,14 +24,14 @@ $checkradio-top-offset: 0rem !default
       top: ( ( $newSize / 2 ) - ( $height / 2 ) ) * 0.9
       left: $height
 
-  &.is-block
+  &.#{$prefix}is-block
     + label
       &::after,
       &:after
         top: ( ( ( $newSize / 2 ) - ( $height / 2 ) ) * 1.3 )
         left: $height * 1.3
 
-  &.is-rtl
+  &.#{$prefix}is-rtl
     + label
       padding-left: 0
       padding-right: $size * 2
@@ -56,12 +56,12 @@ $checkradio-top-offset: 0rem !default
     &:after
       width: $width
       height: $height
-  &.is-rtl
+  &.#{$prefix}is-rtl
     + label
       padding-right: $size * 2
 
-.is-checkradio[type="radio"],
-.is-checkradio[type="checkbox"]
+.#{$prefix}is-checkradio[type="radio"],
+.#{$prefix}is-checkradio[type="checkbox"]
   outline: 0
   user-select: none
   display: inline-block
@@ -99,7 +99,7 @@ $checkradio-top-offset: 0rem !default
       content: ''
       top: $checkradio-top-offset
 
-  &.is-rtl
+  &.#{$prefix}is-rtl
     + label
       margin-right: 0rem
       margin-left: 0.5rem
@@ -163,13 +163,13 @@ $checkradio-top-offset: 0rem !default
     &:after
       cursor: not-allowed
 
-  &.has-no-border
+  &.#{$prefix}has-no-border
     + label
       &::before,
       &:before
         border: none !important
 
-  &.is-block
+  &.#{$prefix}is-block
     display: none !important
     + label
       width: 100% !important
@@ -180,7 +180,7 @@ $checkradio-top-offset: 0rem !default
       &:before
         border: none !important
 
-.is-checkradio[type="checkbox"]
+.#{$prefix}is-checkradio[type="checkbox"]
   + label
     &::before,
     &:before
@@ -196,25 +196,25 @@ $checkradio-top-offset: 0rem !default
       border-top: 0
       border-left: 0
 
-  &.is-circle
+  &.#{$prefix}is-circle
     + label
       &::before,
       &:before
         border-radius: 50%
 
   +checkbox-size($size-normal)
-  &.is-small
+  &.#{$prefix}is-small
     +checkbox-size($size-small)
-  &.is-medium
+  &.#{$prefix}is-medium
     +checkbox-size($size-medium)
-  &.is-large
+  &.#{$prefix}is-large
     +checkbox-size($size-large)
 
   @each $name, $pair in $colors
     $color: nth($pair, 1)
     $color-invert: nth($pair, 2)
-    &.is-#{$name}
-      &.has-background-color
+    &.#{$prefix}is-#{$name}
+      &.#{$prefix}has-background-color
         + label
           &::before,
           &:before
@@ -230,7 +230,7 @@ $checkradio-top-offset: 0rem !default
           &::after,
           &:after
             border-color: $color !important
-        &.has-background-color
+        &.#{$prefix}has-background-color
           + label
             &::before,
             &:before
@@ -240,7 +240,7 @@ $checkradio-top-offset: 0rem !default
             &:after
               border-color: $color-invert !important
               background-color: $color !important
-        &.is-block
+        &.#{$prefix}is-block
           + label
             color: $color-invert
             border-color: $color !important
@@ -259,13 +259,13 @@ $checkradio-top-offset: 0rem !default
     @each $name, $pair in $colors
       $color: nth($pair, 1)
       $color-invert: nth($pair, 2)
-      &.is-#{$name}
+      &.#{$prefix}is-#{$name}
         + label
           &::after,
           &:after
             border-color: $color
 
-.is-checkradio[type="radio"]
+.#{$prefix}is-checkradio[type="radio"]
   + label
     &::before,
     &:before
@@ -278,7 +278,7 @@ $checkradio-top-offset: 0rem !default
       transform: scale(0.5)
 
   &:checked
-    &.has-background-color
+    &.#{$prefix}has-background-color
       + label
         &::before,
         &:before
@@ -289,7 +289,7 @@ $checkradio-top-offset: 0rem !default
           border-color: $text !important
           background-color: $text !important
 
-  &.is-rtl
+  &.#{$prefix}is-rtl
     + label
       padding-left: 0
       &::after,
@@ -298,18 +298,18 @@ $checkradio-top-offset: 0rem !default
         right: 0
 
   +radio-size($size-normal)
-  &.is-small
+  &.#{$prefix}is-small
     +radio-size($size-small)
-  &.is-medium
+  &.#{$prefix}is-medium
     +radio-size($size-medium)
-  &.is-large
+  &.#{$prefix}is-large
     +radio-size($size-large)
 
   @each $name, $pair in $colors
     $color: nth($pair, 1)
     $color-invert: nth($pair, 2)
-    &.is-#{$name}
-      &.has-background-color
+    &.#{$prefix}is-#{$name}
+      &.#{$prefix}has-background-color
         + label
           &::before,
           &:before
@@ -326,7 +326,7 @@ $checkradio-top-offset: 0rem !default
           &:after
             border-color: $color !important
             background-color: $color !important
-        &.has-background-color
+        &.#{$prefix}has-background-color
           + label
             &::before,
             &:before

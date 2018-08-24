@@ -51,7 +51,7 @@ $switch-focus: 1px dotted $grey-light !default
       transition: $switch-paddle-transition
       content: ''
 
-  &.is-rtl
+  &.#{$prefix}is-rtl
     + label
       padding-left: 0
       padding-right: $switch-width + .5
@@ -71,14 +71,14 @@ $switch-focus: 1px dotted $grey-light !default
         background: $switch-background-active
       &::after
         left: $paddle-active-offest
-    &.is-rtl
+    &.#{$prefix}is-rtl
       + label
         &::after,
         &:after
           left: auto
           right: $paddle-active-offest
 
-  &.is-outlined
+  &.#{$prefix}is-outlined
     + label
       &::before,
       &:before
@@ -97,7 +97,7 @@ $switch-focus: 1px dotted $grey-light !default
         &:after
           background: $switch-paddle-background-active
 
-  &.is-thin
+  &.#{$prefix}is-thin
     + label
       &::before,
       &:before
@@ -107,7 +107,7 @@ $switch-focus: 1px dotted $grey-light !default
       &:after
         box-shadow: 0px 0px 3px $grey
 
-  &.is-rounded
+  &.#{$prefix}is-rounded
     + label
       &::before,
       &:before
@@ -117,7 +117,7 @@ $switch-focus: 1px dotted $grey-light !default
         border-radius: 50%
 
 
-.switch[type="checkbox"]
+.#{$prefix}switch[type="checkbox"]
   outline: 0
   user-select: none
   display: inline-block
@@ -146,23 +146,23 @@ $switch-focus: 1px dotted $grey-light !default
         cursor: not-allowed
 
   +switch-size($size-normal)
-  &.is-small
+  &.#{$prefix}is-small
     +switch-size($size-small)
-  &.is-medium
+  &.#{$prefix}is-medium
     +switch-size($size-medium)
-  &.is-large
+  &.#{$prefix}is-large
     +switch-size($size-large)
 
   @each $name, $pair in $colors
     $color: nth($pair, 1)
     $color-invert: nth($pair, 2)
-    &.is-#{$name}
+    &.#{$prefix}is-#{$name}
       &:checked
         + label
           &::before,
           &:before
             background: $color
-      &.is-outlined
+      &.#{$prefix}is-outlined
         &:checked
           + label
             &::before,
@@ -172,18 +172,18 @@ $switch-focus: 1px dotted $grey-light !default
             &::after,
             &:after
               background: $color
-      &.is-thin
-        &.is-outlined
+      &.#{$prefix}is-thin
+        &.#{$prefix}is-outlined
           + label
             &::after,
             &:after
               box-shadow: none
-    &.is-unchecked-#{$name}
+    &.#{$prefix}is-unchecked-#{$name}
       + label
         &::before,
         &:before
           background: $color
-      &.is-outlined
+      &.#{$prefix}is-outlined
         + label
           &::before,
           &:before

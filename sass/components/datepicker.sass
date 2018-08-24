@@ -23,7 +23,7 @@ $calendar-date-padding: .4rem 0 !default
   #{$property}: #{$value}
 
 =calendar
-  .calendar
+  .#{$prefix}calendar
     background: $white
     border: $calendar-border
     border-radius: $calendar-border-radius
@@ -31,9 +31,9 @@ $calendar-date-padding: .4rem 0 !default
     min-width: 20rem
     text-align: center
     max-width: 20rem
-    &.is-active
+    &.#{$prefix}is-active
       display: initial
-    .calendar-nav
+    .#{$prefix}calendar-nav
       background: $calendar-header-background-color
       color: $white
       border-top-left-radius: $calendar-border-radius
@@ -43,23 +43,23 @@ $calendar-date-padding: .4rem 0 !default
       justify-content: space-between
       font-size: $size-5
       padding: $calendar-header-nav-padding
-      .calendar-nav-month,
-      .calendar-nav-day,
-      .calendar-nav-year
+      .#{$prefix}calendar-nav-month,
+      .#{$prefix}calendar-nav-day,
+      .#{$prefix}calendar-nav-year
         width: 100%
         display: flex
         justify-content: space-between
         align-items: center
-      .calendar-month,
-      .calendar-day,
-      .calendar-year
+      .#{$prefix}calendar-month,
+      .#{$prefix}calendar-day,
+      .#{$prefix}calendar-year
         flex: 1
-      .calendar-month
+      .#{$prefix}calendar-month
         font-size: $size-4
-      .calendar-day
+      .#{$prefix}calendar-day
         font-size: $size-2
-      .calendar-nav-previous-month, .calendar-nav-next-month,
-      .calendar-nav-previous-year, .calendar-nav-next-year,
+      .#{$prefix}calendar-nav-previous-month, .#{$prefix}calendar-nav-next-month,
+      .#{$prefix}calendar-nav-previous-year, .#{$prefix}calendar-nav-next-year,
         flex-basis: auto
         flex-grow: 0
         flex-shrink: 0
@@ -73,27 +73,27 @@ $calendar-date-padding: .4rem 0 !default
           stroke: currentColor
           width: 11.25px
           height: 18px
-    .calendar-header, .calendar-body
+    .#{$prefix}calendar-header, .#{$prefix}calendar-body
       display: flex
       flex-wrap: wrap
       justify-content: center
-    .calendar-header .calendar-date, .calendar-body .calendar-date
+    .#{$prefix}calendar-header .#{$prefix}calendar-date, .#{$prefix}calendar-body .#{$prefix}calendar-date
       flex: 0 0 14.28%
       max-width: 14.28%
-    .calendar-header
+    .#{$prefix}calendar-header
       padding: $calendar-header-padding
       background: $calendar-days-background-color
       color: findColorInvert( $calendar-days-background-color )
       font-size: $size-7
-      .calendar-date
+      .#{$prefix}calendar-date
         color: $calendar-header-days-color
-    .calendar-body
+    .#{$prefix}calendar-body
       padding: $calendar-body-padding
       color: $grey
-    .calendar-date
+    .#{$prefix}calendar-date
       border: 0
       padding: $calendar-date-padding
-      .date-item
+      .#{$prefix}date-item
         appearance: none
         background: transparent
         border: .1rem solid transparent
@@ -111,7 +111,7 @@ $calendar-date-padding: .4rem 0 !default
         vertical-align: middle
         white-space: nowrap
         width: 2.2rem
-        &.is-today
+        &.#{$prefix}is-today
           background: $calendar-today-background
           border-color: $calendar-today-border-color
           color: $calendar-today-color
@@ -125,17 +125,17 @@ $calendar-date-padding: .4rem 0 !default
           border-color: $calendar-date-hover-background-color
           color: findColorInvert( $calendar-date-hover-background-color )
           text-decoration: none
-        &.is-active
+        &.#{$prefix}is-active
           background: $primary
           border-color: $primary
           color: findColorInvert( $primary )
-      &.is-disabled,
+      &.#{$prefix}is-disabled,
       &[disabled]
-        .date-item, .calendar-event
+        .#{$prefix}date-item, .#{$prefix}calendar-event
           cursor: default
           opacity: .25
           pointer-events: none
-    .calendar-range
+    .#{$prefix}calendar-range
       position: relative
       &::before
         background: $calendar-range-background-color
@@ -146,17 +146,17 @@ $calendar-date-padding: .4rem 0 !default
         right: 0
         top: 50%
         transform: translateY(-50%)
-      &.calendar-range-start::before
+      &.#{$prefix}calendar-range-start::before
         left: 50%
-      &.calendar-range-end::before
+      &.#{$prefix}calendar-range-end::before
         right: 50%
-      .date-item
+      .#{$prefix}date-item
         color: $primary
 
-    &.is-large
+    &.#{$prefix}is-large
       max-width: 100%
-      .calendar-body
-        .calendar-date
+      .#{$prefix}calendar-body
+        .#{$prefix}calendar-date
           border-bottom: $calendar-border
           border-right: $calendar-border
           display: flex
@@ -167,25 +167,25 @@ $calendar-date-padding: .4rem 0 !default
             border-right: 0
           &:nth-last-child(-n+7)
             border-bottom: 0
-      .date-item
+      .#{$prefix}date-item
         align-self: flex-end
         height: 2.2rem
         margin-right: .5rem
         margin-top: .5rem
-      .calendar-range
+      .#{$prefix}calendar-range
         &::before
           top: 1.9rem
-        &.calendar-range-start::before
+        &.#{$prefix}calendar-range-start::before
           left: auto
           width: 1.9rem
-        &.calendar-range-end::before
+        &.#{$prefix}calendar-range-end::before
           right: 1.9rem
-      .calendar-events
+      .#{$prefix}calendar-events
         flex-grow: 1
         line-height: 1
         overflow-y: auto
         padding: .5rem
-      .calendar-event
+      .#{$prefix}calendar-event
         background-color: $grey
         border-radius: $radius-small
         color: $white
@@ -201,15 +201,15 @@ $calendar-date-padding: .4rem 0 !default
         @each $name, $pair in $colors
           $color: nth($pair, 1)
           $color-invert: nth($pair, 2)
-          &.is-#{$name}
+          &.#{$prefix}is-#{$name}
             background-color: $color
             color: $color-invert
 
-.datepicker
+.#{$prefix}datepicker
   display: none
-  &.is-active
+  &.#{$prefix}is-active
     display: flex
-    .calendar
+    .#{$prefix}calendar
       position: fixed
       z-index: 40
       min-width: 20rem
@@ -217,7 +217,7 @@ $calendar-date-padding: .4rem 0 !default
       position: relative
       margin: 0 auto
       max-height: calc(100vh - 40px)
-    .calendar-nav
+    .#{$prefix}calendar-nav
       flex-direction: column
   +calendar
 
