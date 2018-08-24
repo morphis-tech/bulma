@@ -128,28 +128,28 @@
   +mobile
     display: none
 
-#{$prefix}hero-buttons
+.#{$prefix}hero-buttons
   margin-top: 1.5rem
   // Responsiveness
   +mobile
-    #{$prefix}button
+    .#{$prefix}button
       display: flex
       &:not(:last-child)
         margin-bottom: 0.75rem
   +tablet
     display: flex
     justify-content: center
-    #{$prefix}button:not(:last-child)
+    .#{$prefix}button:not(:last-child)
       margin-right: 1.5rem
 
 // Containers
 
-#{$prefix}hero-head,
-#{$prefix}hero-foot
+.#{$prefix}hero-head,
+.#{$prefix}hero-foot
   flex-grow: 0
   flex-shrink: 0
 
-#{$prefix}hero-body
+.#{$prefix}hero-body
   flex-grow: 1
   flex-shrink: 0
   padding: 3rem 1.5rem
