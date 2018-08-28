@@ -1,12 +1,12 @@
 {
-  "name": "bulma",
+  "name": "buruma",
   "version": "0.7.1",
   "homepage": "https://bulma.io",
   "authors": [
     "jgthms <bbxdesign@gmail.com>"
   ],
   "description": "Modern CSS framework based on Flexbox",
-  "main": "bulma.sass",
+  "main": "buruma.sass",
   "keywords": [
     "css",
     "sass",
