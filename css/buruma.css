@@ -724,19 +724,19 @@ table th {
   }
 }
 
-b-.is-capitalized {
+.b-is-capitalized {
   text-transform: capitalize !important;
 }
 
-b-.is-lowercase {
+.b-is-lowercase {
   text-transform: lowercase !important;
 }
 
-b-.is-uppercase {
+.b-is-uppercase {
   text-transform: uppercase !important;
 }
 
-b-.is-italic {
+.b-is-italic {
   font-style: italic !important;
 }
 
@@ -5168,7 +5168,7 @@ a.b-tag:hover {
 .b-delete {
   -moz-appearance: none;
   -webkit-appearance: none;
-  background-color: rgba(10, 10, 10, 0.2);
+  background-color: inherit;
   border: none;
   border-radius: 290486px;
   cursor: pointer;
@@ -5189,7 +5189,7 @@ a.b-tag:hover {
 }
 
 .b-delete::before, .b-delete::after {
-  background-color: white;
+  background-color: #0a0a0a;
   content: "";
   display: block;
   left: 50%;
@@ -5203,19 +5203,19 @@ a.b-tag:hover {
 
 .b-delete::before {
   height: 2px;
-  width: 50%;
+  width: 100%;
 }
 
 .b-delete::after {
-  height: 50%;
+  height: 100%;
   width: 2px;
 }
 
-.b-delete:hover, .b-delete:focus {
+.b-delete:hover::before, .b-delete:hover::after, .b-delete:focus::before, .b-delete:focus::after {
   background-color: rgba(10, 10, 10, 0.3);
 }
 
-.b-delete:active {
+.b-delete:active::before, .b-delete:active::after {
   background-color: rgba(10, 10, 10, 0.4);
 }
 
@@ -7701,7 +7701,7 @@ a.b-dropdown-item.b-is-active {
 .b-modal-close {
   -moz-appearance: none;
   -webkit-appearance: none;
-  background-color: rgba(10, 10, 10, 0.2);
+  background-color: inherit;
   border: none;
   border-radius: 290486px;
   cursor: pointer;
@@ -7728,7 +7728,7 @@ a.b-dropdown-item.b-is-active {
 }
 
 .b-modal-close::before, .b-modal-close::after {
-  background-color: white;
+  background-color: #0a0a0a;
   content: "";
   display: block;
   left: 50%;
@@ -7742,19 +7742,19 @@ a.b-dropdown-item.b-is-active {
 
 .b-modal-close::before {
   height: 2px;
-  width: 50%;
+  width: 100%;
 }
 
 .b-modal-close::after {
-  height: 50%;
+  height: 100%;
   width: 2px;
 }
 
-.b-modal-close:hover, .b-modal-close:focus {
+.b-modal-close:hover::before, .b-modal-close:hover::after, .b-modal-close:focus::before, .b-modal-close:focus::after {
   background-color: rgba(10, 10, 10, 0.3);
 }
 
-.b-modal-close:active {
+.b-modal-close:active::before, .b-modal-close:active::after {
   background-color: rgba(10, 10, 10, 0.4);
 }
 

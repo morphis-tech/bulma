@@ -170,7 +170,7 @@
   @extend %unselectable
   -moz-appearance: none
   -webkit-appearance: none
-  background-color: rgba($black, 0.2)
+  background-color: inherit;
   border: none
   border-radius: $radius-rounded
   cursor: pointer
@@ -190,7 +190,7 @@
   width: 20px
   &::before,
   &::after
-    background-color: $white
+    background-color: $black;
     content: ""
     display: block
     left: 50%
@@ -200,15 +200,19 @@
     transform-origin: center center
   &::before
     height: 2px
-    width: 50%
+    width: 100%
   &::after
-    height: 50%
+    height: 100%
     width: 2px
   &:hover,
   &:focus
-    background-color: rgba($black, 0.3)
+      &::before,
+      &::after
+        background-color: rgba($black, 0.3)
   &:active
-    background-color: rgba($black, 0.4)
+      &::before,
+      &::after
+        background-color: rgba($black, 0.4)
   // Sizes
   &.#{$prefix}is-small
     height: 16px
