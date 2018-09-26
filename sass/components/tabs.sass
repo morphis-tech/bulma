@@ -37,7 +37,7 @@ $tabs-toggle-link-active-color: $link-invert !default
   overflow: hidden
   overflow-x: auto
   white-space: nowrap
-  a
+  & > ul a
     align-items: center
     border-bottom-color: $tabs-border-bottom-color
     border-bottom-style: $tabs-border-bottom-style
@@ -76,11 +76,11 @@ $tabs-toggle-link-active-color: $link-invert !default
     &.#{$prefix}is-right
       justify-content: flex-end
       padding-left: 0.75em
-  .#{$prefix}icon
-    &:first-child
-      margin-right: 0.5em
-    &:last-child
-      margin-left: 0.5em
+    .#{$prefix}icon
+      &:first-child
+        margin-right: 0.5em
+      &:last-child
+        margin-left: 0.5em
   // Alignment
   &.#{$prefix}is-centered
     ul
