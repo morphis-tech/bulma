@@ -4176,7 +4176,9 @@ a.b-box:active {
   font-size: 1.5rem;
 }
 
-.b-control.b-has-icons-left .b-icon, .b-control.b-has-icons-right .b-icon {
+.b-control.b-has-icons-left .b-icons .b-icon,
+.b-control.b-has-icons-left > .b-icon, .b-control.b-has-icons-right .b-icons .b-icon,
+.b-control.b-has-icons-right > .b-icon {
   color: #dbdbdb;
   height: 2.25em;
   pointer-events: none;
@@ -9826,7 +9828,16 @@ label.b-panel-block:hover {
   margin-bottom: 1.5rem;
 }
 
-.b-tabs > ul a {
+.b-tabs > ul li, .b-tabs .b-tab-panel > .b-tab > ul li {
+  display: block;
+}
+
+.b-tabs > ul li.b-is-active > a, .b-tabs .b-tab-panel > .b-tab > ul li.b-is-active > a {
+  border-bottom-color: #3273dc;
+  color: #3273dc;
+}
+
+.b-tabs > ul li > a, .b-tabs .b-tab-panel > .b-tab > ul li > a {
   align-items: center;
   border-bottom-color: #dbdbdb;
   border-bottom-style: solid;
@@ -9839,18 +9850,9 @@ label.b-panel-block:hover {
   vertical-align: top;
 }
 
-.b-tabs > ul a:hover {
+.b-tabs > ul li > a:hover, .b-tabs .b-tab-panel > .b-tab > ul li > a:hover {
   border-bottom-color: #363636;
   color: #363636;
-}
-
-.b-tabs li {
-  display: block;
-}
-
-.b-tabs li.b-is-active a {
-  border-bottom-color: #3273dc;
-  color: #3273dc;
 }
 
 .b-tabs ul {
