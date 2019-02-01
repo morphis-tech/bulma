@@ -1,10 +1,22 @@
 /*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
-@keyframes spinAround {
+@-webkit-keyframes spinAround {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+@keyframes spinAround {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
   }
 }
 
@@ -162,7 +174,10 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   text-rendering: optimizeLegibility;
-  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
 }
 
 article,
@@ -1229,7 +1244,8 @@ a.b-has-text-danger:hover, a.b-has-text-danger:focus {
 
 .b-is-sr-only {
   border: none !important;
-  clip-path: inset(50%) !important;
+  -webkit-clip-path: inset(50%) !important;
+          clip-path: inset(50%) !important;
   clip: rect(0, 0, 0, 0) !important;
   height: 0.01em !important;
   overflow: hidden !important;
@@ -2453,7 +2469,8 @@ a.b-box:active {
 }
 
 .b-button.b-is-loading::after {
-  animation: spinAround 500ms infinite linear;
+  -webkit-animation: spinAround 500ms infinite linear;
+          animation: spinAround 500ms infinite linear;
   border: 2px solid #dbdbdb;
   border-radius: 290486px;
   border-right-color: transparent;
@@ -3096,8 +3113,10 @@ a.b-box:active {
   pointer-events: none;
   position: absolute;
   top: 50%;
-  transform: rotate(-45deg);
-  transform-origin: center;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
   width: 0.625em;
   right: 1.125em;
   z-index: 4;
@@ -3378,7 +3397,8 @@ a.b-box:active {
 }
 
 .b-select.b-is-loading::after {
-  animation: spinAround 500ms infinite linear;
+  -webkit-animation: spinAround 500ms infinite linear;
+          animation: spinAround 500ms infinite linear;
   border: 2px solid #dbdbdb;
   border-radius: 290486px;
   border-right-color: transparent;
@@ -3392,7 +3412,8 @@ a.b-box:active {
   position: absolute;
   right: 0.625em;
   top: 0.625em;
-  transform: none;
+  -webkit-transform: none;
+          transform: none;
 }
 
 .b-select.b-is-loading.b-is-small:after {
@@ -4212,7 +4233,8 @@ a.b-box:active {
 }
 
 .b-control.b-is-loading::after {
-  animation: spinAround 500ms infinite linear;
+  -webkit-animation: spinAround 500ms infinite linear;
+          animation: spinAround 500ms infinite linear;
   border: 2px solid #dbdbdb;
   border-radius: 290486px;
   border-right-color: transparent;
@@ -4990,8 +5012,10 @@ a.b-box:active {
   left: 50%;
   position: absolute;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%) rotate(45deg);
-  transform-origin: center center;
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+          transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
 }
 
 .b-tag:not(body).b-is-delete::before {
@@ -5178,8 +5202,10 @@ a.b-tag:hover {
   left: 50%;
   position: absolute;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%) rotate(45deg);
-  transform-origin: center center;
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+          transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
 }
 
 .b-delete::before {
@@ -5252,7 +5278,8 @@ a.b-tag:hover {
 }
 
 .b-loader {
-  animation: spinAround 500ms infinite linear;
+  -webkit-animation: spinAround 500ms infinite linear;
+          animation: spinAround 500ms infinite linear;
   border: 2px solid #dbdbdb;
   border-radius: 290486px;
   border-right-color: transparent;
@@ -5453,7 +5480,10 @@ a.b-tag:hover {
 .b-is-checkradio[type="radio"],
 .b-is-checkradio[type="checkbox"] {
   outline: 0;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: inline-block;
   position: absolute;
   opacity: 0;
@@ -5473,9 +5503,12 @@ a.b-tag:hover {
 .b-is-checkradio[type="radio"] + label:hover::before, .b-is-checkradio[type="radio"] + label:hover:before,
 .b-is-checkradio[type="checkbox"] + label:hover::before,
 .b-is-checkradio[type="checkbox"] + label:hover:before {
-  animation-duration: 0.4s;
-  animation-fill-mode: both;
-  animation-name: hover-color;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: hover-color;
+          animation-name: hover-color;
 }
 
 .b-is-checkradio[type="radio"] + label::before, .b-is-checkradio[type="radio"] + label:before,
@@ -5541,7 +5574,8 @@ a.b-tag:hover {
 .b-is-checkradio[type="radio"]:checked + label::before, .b-is-checkradio[type="radio"]:checked + label:before,
 .b-is-checkradio[type="checkbox"]:checked + label::before,
 .b-is-checkradio[type="checkbox"]:checked + label:before {
-  animation-name: none;
+  -webkit-animation-name: none;
+          animation-name: none;
 }
 
 .b-is-checkradio[type="radio"]:checked + label::after, .b-is-checkradio[type="radio"]:checked + label:after,
@@ -5578,7 +5612,8 @@ a.b-tag:hover {
 .b-is-checkradio[type="radio"][disabled]:hover::before, .b-is-checkradio[type="radio"][disabled]:hover:before,
 .b-is-checkradio[type="checkbox"][disabled]:hover::before,
 .b-is-checkradio[type="checkbox"][disabled]:hover:before {
-  animation-name: none;
+  -webkit-animation-name: none;
+          animation-name: none;
 }
 
 .b-is-checkradio[type="radio"][disabled]::before, .b-is-checkradio[type="radio"][disabled]:before,
@@ -5624,7 +5659,8 @@ a.b-tag:hover {
 
 .b-is-checkradio[type="checkbox"] + label::after, .b-is-checkradio[type="checkbox"] + label:after {
   box-sizing: border-box;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   border-width: .1rem;
   border-style: solid;
   border-color: #00d1b2;
@@ -6096,7 +6132,8 @@ a.b-tag:hover {
 
 .b-is-checkradio[type="checkbox"]:indeterminate + label::after, .b-is-checkradio[type="checkbox"]:indeterminate + label:after {
   display: inline-block;
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
   border-bottom: none;
 }
 
@@ -6148,7 +6185,8 @@ a.b-tag:hover {
   border-radius: 50%;
   background: #00d1b2;
   left: 0;
-  transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
 }
 
 .b-is-checkradio[type="radio"]:checked.b-has-background-color + label::before, .b-is-checkradio[type="radio"]:checked.b-has-background-color + label:before {
@@ -6600,7 +6638,9 @@ a.b-tag:hover {
 }
 
 .b-datepicker .b-calendar .b-calendar-date .b-date-item {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background: transparent;
   border: .1rem solid transparent;
   border-radius: 100%;
@@ -6663,7 +6703,8 @@ a.b-tag:hover {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .b-datepicker .b-calendar .b-calendar-range.b-calendar-range-start::before {
@@ -6899,7 +6940,9 @@ a.b-tag:hover {
 }
 
 .b-calendar .b-calendar-date .b-date-item {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background: transparent;
   border: .1rem solid transparent;
   border-radius: 100%;
@@ -6962,7 +7005,8 @@ a.b-tag:hover {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .b-calendar .b-calendar-range.b-calendar-range-start::before {
@@ -7697,8 +7741,10 @@ a.b-dropdown-item.b-is-active {
   left: 50%;
   position: absolute;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%) rotate(45deg);
-  transform-origin: center center;
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+          transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
 }
 
 .b-modal-close::before {
@@ -8343,7 +8389,7 @@ a.b-dropdown-item.b-is-active {
 }
 
 .b-navbar.b-has-shadow {
-  box-shadow: 0 2px 0 0 whitesmoke;
+  box-shadow: 0 2px 0 0 #4a4a4a;
 }
 
 .b-navbar.b-is-fixed-bottom, .b-navbar.b-is-fixed-top {
@@ -8358,7 +8404,7 @@ a.b-dropdown-item.b-is-active {
 }
 
 .b-navbar.b-is-fixed-bottom.b-has-shadow {
-  box-shadow: 0 -2px 0 0 whitesmoke;
+  box-shadow: 0 -2px 0 0 #4a4a4a;
 }
 
 .b-navbar.b-is-fixed-top {
@@ -8410,9 +8456,12 @@ body.b-has-navbar-fixed-bottom {
   height: 1px;
   left: calc(50% - 8px);
   position: absolute;
-  transform-origin: center;
+  -webkit-transform-origin: center;
+          transform-origin: center;
   transition-duration: 86ms;
+  transition-property: background-color, opacity, -webkit-transform;
   transition-property: background-color, opacity, transform;
+  transition-property: background-color, opacity, transform, -webkit-transform;
   transition-timing-function: ease-out;
   width: 16px;
 }
@@ -8434,7 +8483,8 @@ body.b-has-navbar-fixed-bottom {
 }
 
 .b-navbar-burger.b-is-active span:nth-child(1) {
-  transform: translateY(5px) rotate(45deg);
+  -webkit-transform: translateY(5px) rotate(45deg);
+          transform: translateY(5px) rotate(45deg);
 }
 
 .b-navbar-burger.b-is-active span:nth-child(2) {
@@ -8442,7 +8492,8 @@ body.b-has-navbar-fixed-bottom {
 }
 
 .b-navbar-burger.b-is-active span:nth-child(3) {
-  transform: translateY(-5px) rotate(-45deg);
+  -webkit-transform: translateY(-5px) rotate(-45deg);
+          transform: translateY(-5px) rotate(-45deg);
 }
 
 .b-navbar-menu {
@@ -8536,8 +8587,10 @@ a.b-navbar-item:hover, a.b-navbar-item.b-is-active,
   pointer-events: none;
   position: absolute;
   top: 50%;
-  transform: rotate(-45deg);
-  transform-origin: center;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
   width: 0.625em;
   margin-top: -0.375em;
   right: 1.125em;
@@ -8665,7 +8718,8 @@ a.b-navbar-item:hover, a.b-navbar-item.b-is-active,
     align-items: stretch;
   }
   .b-navbar-item.b-has-dropdown-up .b-navbar-link::after {
-    transform: rotate(135deg) translate(0.25em, -0.25em);
+    -webkit-transform: rotate(135deg) translate(0.25em, -0.25em);
+            transform: rotate(135deg) translate(0.25em, -0.25em);
   }
   .b-navbar-item.b-has-dropdown-up .b-navbar-dropdown {
     border-bottom: 2px solid #dbdbdb;
@@ -8681,7 +8735,8 @@ a.b-navbar-item:hover, a.b-navbar-item.b-is-active,
   .b-navbar.b-is-spaced .b-navbar-item.b-is-active .b-navbar-dropdown, .b-navbar-item.b-is-active .b-navbar-dropdown.b-is-boxed, .b-navbar.b-is-spaced .b-navbar-item.b-is-hoverable:hover .b-navbar-dropdown, .b-navbar-item.b-is-hoverable:hover .b-navbar-dropdown.b-is-boxed {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   .b-navbar-menu {
     flex-grow: 1;
@@ -8732,9 +8787,12 @@ a.b-navbar-item:hover, a.b-navbar-item.b-is-active,
     opacity: 0;
     pointer-events: none;
     top: calc(100% + (-4px));
-    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
     transition-duration: 86ms;
+    transition-property: opacity, -webkit-transform;
     transition-property: opacity, transform;
+    transition-property: opacity, transform, -webkit-transform;
   }
   .b-navbar-dropdown.b-is-right {
     left: auto;
@@ -9078,7 +9136,10 @@ label.b-panel-block:hover {
 
 .b-switch[type="checkbox"] {
   outline: 0;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: inline-block;
   position: absolute;
   opacity: 0;
@@ -9138,7 +9199,8 @@ label.b-panel-block:hover {
   left: 0.25rem;
   width: 1rem;
   height: 1rem;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   border-radius: 4px;
   background: white;
   transition: all 0.25s ease-out;
@@ -9238,7 +9300,8 @@ label.b-panel-block:hover {
   left: 0.25rem;
   width: 0.625rem;
   height: 0.625rem;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   border-radius: 4px;
   background: white;
   transition: all 0.25s ease-out;
@@ -9338,7 +9401,8 @@ label.b-panel-block:hover {
   left: 0.25rem;
   width: 1.375rem;
   height: 1.375rem;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   border-radius: 4px;
   background: white;
   transition: all 0.25s ease-out;
@@ -9438,7 +9502,8 @@ label.b-panel-block:hover {
   left: 0.25rem;
   width: 1.75rem;
   height: 1.75rem;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   border-radius: 4px;
   background: white;
   transition: all 0.25s ease-out;
@@ -11728,6 +11793,8 @@ label.b-panel-block:hover {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
   min-height: min-content;
 }
 
@@ -12662,7 +12729,8 @@ label.b-panel-block:hover {
   min-width: 100%;
   position: absolute;
   top: 50%;
-  transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
 }
 
 .b-hero-video.b-is-transparent {
@@ -12727,5 +12795,4 @@ label.b-panel-block:hover {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem;
 }
-
 /*# sourceMappingURL=buruma.css.map */
